@@ -1,0 +1,189 @@
+:root {
+    --bg-color-primary: #000000;
+    --bg-color-secondary: #ffffff;
+    --bg-color-tertiary: #ff0000;
+    --width-hour: .2rem;
+    --width-minute: .1rem;
+    --height-hour: 1.8rem;
+    --height-minute: 1.2rem;
+    --circle: .5rem;
+  }
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+html {
+    font-family: 'Roboto Condensed', sans-serif;
+}
+
+body {
+    background-color: var(--bg-color-primary);
+}
+
+#container {
+    width: 80vw;
+    height: 24rem;
+    margin: auto;
+    position: relative;
+    top: calc((100vh - 60vh) / 3);
+}
+
+#clock {
+    width: 100%;
+    height: 14.4rem;
+    position: relative;
+}
+
+#hour-hand,
+#minute-hand,
+.hour,
+.minute,
+#circle {
+    background-color: var(--bg-color-secondary);
+}
+
+#hour-hand,
+.hour {
+    width: var(--width-hour);
+    right: calc(50% - var(--width-hour) / 2);
+}
+
+#minute-hand,
+#second-hand,
+.minute {
+    width: var(--width-minute);
+    right: calc(50% - var(--width-minute) / 2);
+}
+
+#hour-hand,
+#minute-hand,
+#second-hand {
+    transform-origin: center bottom;
+}
+
+.hour,
+.minute {
+    transform-origin:  center 7.2rem;
+}
+
+#hour-hand {
+    height: 3.8rem;
+    position: absolute;
+    top: calc(50% - 3.8rem);
+}
+
+#minute-hand {
+    height: 5.2rem;
+    position: absolute;
+    top: calc(50% - 5.2rem);
+}
+
+#second-hand {
+    height: 6.9rem;
+    position: absolute;
+    top: calc(50% - 6.9rem);
+    background-color: var(--bg-color-tertiary);
+}
+
+.hour {
+    height: var(--height-hour);
+    position: absolute;
+}
+
+.minute {
+    height: var(--height-minute);
+    position: absolute;
+}
+
+#circle {
+    width: var(--circle);
+    height: var(--circle);
+    position: absolute;
+    top: calc(50% - var(--circle) / 2);
+    right: calc(50% - var(--circle) / 2);
+    border-radius: 50%;
+}
+
+#date {
+    color: var(--bg-color-secondary);
+    font-size: 1rem;
+    text-align: center;
+    margin-top: 1.6rem;
+}
+
+@media screen and (min-width: 375px) {
+
+    #clock {
+        height: 20rem;
+    }
+
+    .hour,
+    .minute {
+        transform-origin:  center 10rem;
+    }
+
+    #hour-hand {
+        height: 6rem;
+        top: calc(50% - 6rem);
+    }
+    
+    #minute-hand {
+        height: 7.6rem;
+        top: calc(50% - 7.6rem);
+    }
+    
+    #second-hand {
+        height: 9.6rem;
+        top: calc(50% - 9.6rem);
+    }
+
+    #date {
+        font-size: 1.3rem;
+        margin-top: 2rem;
+    }
+
+}
+
+@media screen and (min-width: 620px) {
+
+    #clock {
+        height: 24rem;
+    }
+
+    .hour,
+    .minute {
+        transform-origin:  center 12rem;
+    }
+
+    #hour-hand {
+        height: 7.4rem;
+        top: calc(50% - 7.4rem);
+    }
+
+    #minute-hand {
+        height: 9.6rem;
+        top: calc(50% - 9.6rem);
+    }
+    
+    #second-hand {
+        height: 11.6rem;
+        top: calc(50% - 11.6rem);
+    }
+
+    #date {
+        font-size: 1.6rem;
+        margin-top: 2.3rem;
+    }
+
+}
+
+@media screen and (min-width: 1200px) {
+
+    #container {
+        width: 40vw;
+    }
+
+}
